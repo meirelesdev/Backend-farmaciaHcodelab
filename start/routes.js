@@ -5,6 +5,7 @@ const Route = use('Route')
 // Rota para cadastro de usuarios
 Route.post('users/new', 'UserController.store')
 
+
 // Rotas para administração controlar usuarios
 Route.group(()=>{
     Route.resource('users', 'UserController').apiOnly()
@@ -27,8 +28,4 @@ Route.group(()=>{
 // Rota de Autenticação
 Route.post('sessions', 'SessionController.store')
 Route.delete('admin/users/:id', 'UserController.destroy')
-Route.post('passwords', 'ForgotPasswordController.store')
 
-Route.post('files','FileController.store')
-
-Route.get('files/:id', 'FileController.show')
