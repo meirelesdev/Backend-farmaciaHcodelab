@@ -28,10 +28,10 @@ class UserController {
 
         let data = request.only(['username', 'email', 'password'])
 
-        user.merge(data)
+            user.merge(data)
 
-        user.save()
-        
+            await user.save()
+
         response.send(user)
     }
 
