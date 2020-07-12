@@ -15,11 +15,13 @@ class UserController {
 
         return users
     }
-    async show([params, response ]){
+    async show ({ params, response }) {
+    
         const user = await User.findOrFail(params.id)
-
+    
         response.send(user)
-    }
+        
+      }
 
     async destroy ({ params,  response }) {
 

@@ -4,7 +4,7 @@
 const Route = use('Route')
 // Rota para cadastro de usuarios
 Route.post('users/new', 'UserController.store')
-Route.get('users/:id', 'UserController.show')
+Route.get('/users/:id', 'UserController.show')
 
 // Rotas para administração controlar usuarios
 Route.group(()=>{
