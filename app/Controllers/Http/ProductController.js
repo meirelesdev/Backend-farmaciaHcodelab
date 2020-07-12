@@ -84,7 +84,9 @@ class ProductController {
 
     if(newPhoto){
       
-      await deleteFile(Helpers.resourcesPath(product.urlimg))
+      if(product.urlimg){
+        await deleteFile(Helpers.resourcesPath(product.urlimg))
+      }  
 
       const name = `${Date.now()}.${newPhoto.extname}`
 
