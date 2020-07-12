@@ -83,6 +83,7 @@ class ProductController {
     })
 
     if(newPhoto){
+      
       await deleteFile(Helpers.resourcesPath(product.urlimg))
 
       const name = `${Date.now()}.${newPhoto.extname}`
@@ -106,7 +107,7 @@ class ProductController {
 
   }
 
-  async destroy ({ params, request, response }) {
+  async destroy ({ params, response }) {
   
     const product = await Product.findOrFail(params.id)
     
