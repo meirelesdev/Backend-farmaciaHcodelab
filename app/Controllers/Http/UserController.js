@@ -21,14 +21,16 @@ class UserController {
         response.send(user)
     }
 
-    async destroy ({ params, auth, response }) {
+    async destroy ({ params,  response }) {
 
         const user = await User.findOrFail(params.id)
 
-        if(user.id !== auth.user.id){
-            response.status(401).send({ error: 'Não Autorizado'})
-        }
+        // if(user.id !== auth.user.id){
+        //     response.status(401).send({ error: 'Não Autorizado'})
+        // }
         await user.delete()
+        
+        response.send("Usuarios deletado")
 
     }
 }
