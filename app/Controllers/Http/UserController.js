@@ -26,7 +26,7 @@ class UserController {
         
         const user = await User.findOrFail(params.id)
 
-        let data = request.only(['username', 'email', 'password'])
+        const data = request.only(['username', 'email', 'password'])
 
             user.merge(data)
 

@@ -75,7 +75,7 @@ class ProductController {
 
     const dataProduct = request.only(['name', 'description', 'oldprice', 'price', 'category'])
   
-    dataProduct.url = product.url
+    dataProduct.urlimg = product.urlimg
 
     const newPhoto = request.file('file', {
       maxSize: '2mb',
@@ -103,7 +103,7 @@ class ProductController {
 
     product.merge(dataProduct)
   
-    product.save()
+    await product.save()
 
     response.send(product)
 
